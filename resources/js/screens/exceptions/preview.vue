@@ -73,6 +73,20 @@
                     </span>
                 </td>
             </tr>
+
+          <tr>
+                <td class="table-fit font-weight-bold">Monday item</td>
+
+                <td>
+                    <span v-if="entry.content.monday_item_id">
+                      {{entry.content.monday_item_id}}
+                        <a :href="entry.content.monday_item_url">View in monday</a>
+                    </span>
+                    <span v-if="!entry.content.monday_item_id">
+                      <a href="#">Create new item</a>
+                    </span>
+                </td>
+          </tr>
         </template>
 
         <div slot="after-attributes-card" slot-scope="slotProps" class="mt-5">
