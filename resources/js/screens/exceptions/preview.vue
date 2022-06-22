@@ -31,6 +31,17 @@
                     })
                 });
             },
+
+            createMondayItem(entry) {
+                this.alertConfirm('Are you sure you wan\'t to create a new item?', () => {
+
+                    axios.post(Telescope.basePath + '/telescope-api/monday/create-item/' + entry.id, {
+
+                    }).then(response => {
+                        this.entry = response.data.entry;
+                    })
+                });
+            },
         }
     }
 </script>
@@ -83,7 +94,7 @@
                         <a :href="entry.content.monday_item_url">View in monday</a>
                     </span>
                     <span v-if="!entry.content.monday_item_id">
-                      <a href="#">Create new item</a>
+                      <a v-on:click.prevent="createMondayItem(entry) href="#">Create new item</a>
                     </span>
                 </td>
           </tr>
