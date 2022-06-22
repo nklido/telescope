@@ -90,11 +90,10 @@
 
                 <td>
                     <span v-if="entry.content.monday_item_id">
-                      {{entry.content.monday_item_id}}
                         <a :href="entry.content.monday_item_url">View in monday</a>
                     </span>
                     <span v-if="!entry.content.monday_item_id">
-                      <a v-on:click.prevent="createMondayItem(entry) href="#">Create new item</a>
+                      <a v-on:click.prevent="createMondayItem(entry)" href="#">Create new item</a>
                     </span>
                 </td>
           </tr>

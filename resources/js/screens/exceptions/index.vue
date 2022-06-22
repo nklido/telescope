@@ -55,9 +55,8 @@
             </td>
 
             <td class="table-fit">
-                    <span v-if="entry.content.monday_item_id">
-                      {{ entry.content.monday_item_id }}
-                        <a :href="entry.content.monday_item_url">
+                    <span v-if="slotProps.entry.content.monday_item_id">
+                        <a :href="slotProps.entry.content.monday_item_url">
                             <img src="https://cdn.monday.com/images/logos/monday_logo_icon.png" alt="">
                         </a>
                     </span>
